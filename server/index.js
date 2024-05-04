@@ -9,13 +9,9 @@ const cors = require("cors")
 App.use(cors())
 App.use(express.json())
 const PORT= process.env.PORT || 5000
-const db = mysql.createConnection({
-    host: process.env.DB_HOST ||"localhost",
-    user: process.env.DB_USER ||"root",
-    port: process.env.DB_DATABASE ||"3306",
-    password: process.env.DB_PASSWORD ,
-    database: process.env.DB_DATABASE ||"usuarios"
-})
+ DB_NAME = "usuarios"
+const urlDB = `mysql://${ process.env.DB_USER} :${process.env.DB_PASSWORD}:@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
+const db = mysql.createConnection(urlDB)
 
 App.post("/create", (req, res) => {
     const nombre = req.body.nombre;
