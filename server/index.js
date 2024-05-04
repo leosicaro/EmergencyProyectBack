@@ -3,19 +3,19 @@ const express = require('express')
 const App = express()
 const mysql = require('mysql')
 const cors = require("cors")
-
-
+//turso token
+//eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MTQ4MTUxOTgsImlkIjoiYmYzYmJiMzMtMjNlZi00MDI0LTllNDctM2NlZTQwYzMwNDg3In0.mJjXAjb42mXRyNk9csWjHJD_-ez0CJAouLDRPTW0s9L6C7TNOnocAZ6A9yamtIFpkcaTVLi-jmlKv6XpMy92CQ
 
 App.use(cors())
 App.use(express.json())
 const PORT= process.env.PORT || 5000
- DB_NAME = "usuarios"
+ DB_NAME = "bt2lhfbacokm36wf9iij"
  const db = mysql.createConnection({
     host: process.env.DB_HOST ||"localhost",
     user: process.env.DB_USER ||"root",
     port: process.env.DB_DATABASE ||"3306",
     password: process.env.DB_PASSWORD ,
-    database: process.env.DB_DATABASE ||"usuarios"
+    database: process.env.DB_DATABASE ||"bt2lhfbacokm36wf9iij"
 })
 
 App.post("/create", (req, res) => {
